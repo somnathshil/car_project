@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3 style="color: white; text-align: center;">Are You Sure Want To Delete <%=car.title%> ?</h3>
+    <br/><br/>
+    <div class="show-edt-dlt">
+    <form method="post" action="/cars/<%=car._id%>?_method=DELETE">
+        <div >
+        <button class="show-dlt">Yes</button>
+    </div>
+    </form>
+    <form method="get" action="/cars/<%=car._id%>">
+        <div >
+        <button class="show-edt">No</button>
+    </div>
+    </form>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+
+</body>

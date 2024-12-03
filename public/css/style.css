@@ -1,0 +1,298 @@
+/** NAVBAR **/
+*{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+body{
+    background-color: rgb(31, 30, 30) !important;
+}
+.navbar{
+    position: sticky !important;
+    top: 0 !important;
+  z-index: 1000;
+}
+.nav-main{
+    height: 6rem !important;
+    background-color: black ;
+}
+.fa-car{
+    color: red;
+}
+.fa-house{
+    color: white;
+    margin-left: 2rem !important;
+}
+.fa-plus{
+    color: white;
+     margin-left: 2rem !important;
+}
+.nav-link{
+    color: white !important;
+    opacity: .7;
+}
+.nav-link:hover{
+    opacity: 1;
+}
+.car-home-icon{
+    display: flex;
+    flex-wrap: wrap ;
+}
+.nav-box{
+    width: 100%;
+   display: flex !important;
+   flex-wrap: wrap !important;
+   justify-content: space-between !important;
+}
+
+
+/* Navbar SideBar  */
+    
+.sidebar_menu{
+    background-color: rgb(245, 162, 10);
+    height: 90vh;
+    width: 25%;
+    position: absolute;
+    right: -350px;
+}
+
+
+.logo_and_cut{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.logo_and_cut .logo{
+    width: 90%;
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    text-align: center;
+}
+.logo_and_cut .logo a {
+    text-decoration: none;
+    color: red;
+}
+.logo_and_cut .btn_two{
+    font-size: xx-large;
+    /* margin-right: 1rem !important; */
+}
+.menu{
+    height: 100%;
+}
+.menu li{
+    /* margin-left: 3rem !important; */
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
+    padding-left: 3rem !important;
+    opacity: .8;
+}
+.menu li:hover{
+    opacity: 1;
+    border: 2px solid white;
+    box-shadow: 2px 2px 18px rgb(124, 122, 122);
+    border-radius: 10px;
+}
+.menu li a {
+    color: white;
+    font-size: x-large;
+    font-weight: 500;
+}
+.menu li .social_media{
+    position: absolute;
+    bottom: 2rem;
+}
+.menu li .social_media a{
+    margin-left: 1.5rem !important;
+}
+.btn_one i{
+    color: rgb(235, 198, 198);
+    margin-right: 1rem !important;
+    font-size: x-large;
+}
+
+#check{
+    display: none;
+}
+
+
+#check:checked ~ .btn_one{
+    display: none;
+}
+
+@media(min-width: 760px){
+    .main_box{
+        display: none;
+    }
+}
+@media(max-width: 520px){
+    .sidebar_menu{
+        background-color: rgb(245, 162, 10);
+        height: 90vh;
+        width: 25%;
+        position: absolute;
+        right: -500px;
+    }
+    #check:checked ~ .sidebar_menu{
+        background-color: rgb(245, 162, 10);
+        height: 90vh;
+        width: 90%;
+        position: absolute;
+        right: 0px;
+    }
+    .nav-box{
+        display: none !important;
+    }
+}
+
+/** FOOTER **/
+
+.footer-main{
+    background-color: rgb(100, 99, 99) ;
+    height: 6rem;
+   text-align: center;
+}
+.footer-edit{
+    text-align: center;
+    color: wheat;
+    opacity: .7;
+}
+
+
+/** BODY OF ALL index page **/
+
+.index-main{
+    display: flex ;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.card{
+    
+    margin-bottom: 4rem !important;
+    border-radius: 15px !important;
+    opacity: .9;
+}
+.card:hover{
+    opacity: 1;
+}
+.card-img-top{
+    height: 30vh;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+.index-main a {
+    text-decoration: none;
+}
+.btn-new button{
+    height: 3em ;
+    width: 8em;
+    background-color: black;
+    color: rgb(190, 153, 153);
+    border-radius: 15px;
+    border: none;
+
+}
+.btn-new button:hover{
+    color: white;
+}
+
+.btn-new{
+    text-align: center;
+}
+
+/** SHOW PAGE **/ 
+.show-title, .show-price, .show-description, .show-company, .show-country{
+    color: white;
+}
+
+.show-main{
+    text-align: center;
+}
+.show-image img{
+    width: 40rem;
+    height: 30rem;
+}
+
+.show-edt-dlt{
+    display: flex;
+    justify-content: end;
+    justify-content: space-evenly;
+    /* margin-left: 35rem !important; */
+}
+
+.show-edt{
+    background-color: rgb(16, 236, 133);
+    color: white;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 10px;
+    border: none;
+    opacity: .7;
+}
+.show-edt:hover{
+    opacity: 1;
+}
+.show-dlt{
+    background-color: red;
+    color: white;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 10px;
+    border: none;
+    opacity: .7;
+}
+.show-dlt:hover{
+    opacity: 1;
+}
+
+
+/** Add page **/
+.col-8{
+    width: 60% !important;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.btn-add{
+    text-align: center;
+}
+.btn-add button{
+    background-color: rgb(16, 236, 133);
+    border: none;
+    border-radius: 10px;
+    width: 5rem;
+    height: 2rem;
+    opacity: .7;
+}
+.btn-add button:hover{
+    opacity: 1;
+}
+
+.input-shadow:focus{
+    box-shadow: 0 0 7px 5px white !important;
+    border: 2px solid black !important;
+}
+
+.flash-message{
+    height: 2rem;
+}
+
+/* REVIEW SECTION */
+.review-card{
+    width: 13rem ;
+    margin-left: 1rem;
+}
+
+/* RESPONSIVE */
+/* @media(max-width: 362px){
+    .card{
+        width: 15rem;
+    }
+          .card-body-set-for-star{
+            width: 100%
+          }
+    } */

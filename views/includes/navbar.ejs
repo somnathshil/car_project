@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid nav-main">
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-car fa-2x"></i></a>
+      <!-- <button class="navbar-toggler" type="button"  data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <div class=" nav-box" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link " aria-current="page" href="/cars"><i class="fa-solid fa-house fa-lg">
+             &nbsp; </i>Home</a>
+          <a class="nav-link" href="/cars/new"><i class="fa-solid fa-plus fa-lg"></i>  Add New Car </a> &nbsp; &nbsp; &nbsp; &nbsp;
+          <a class="nav-link" href="#">Pricing</a>
+        </div>
+        <div class="navbar-nav p-3">
+          <% if(!currUser) {  %>
+          <a class="nav-link " aria-current="page" href="/signup"><i class="fa-solid fa-user-plus">
+           </i>&nbsp;Sing Up</a> &nbsp;&nbsp;&nbsp;
+            <a class="nav-link " aria-current="page" href="/login"><i  class="fa-solid fa-right-to-bracket">
+               </i>&nbsp;Log In</a> &nbsp;&nbsp;&nbsp;
+           <%   }  %>
+           <% if(currUser) {  %>
+              <p style="color: aqua;"><%= currUser.username %> <i class="fa-solid fa-user"></i></p>
+              &nbsp;&nbsp;&nbsp;
+              <a class="nav-link " aria-current="page" href="/logout"><i class="fa-solid fa-right-from-bracket">
+                </i>&nbsp;Log Out</a>&nbsp;&nbsp;&nbsp;
+                <%   }  %>
+        </div>
+      </div>
+
+      
+
+      <div class="main_box">
+        <input type="checkbox" id="check"  />
+        <div class="btn_one">
+          <label for="check"  >
+            <i class="fa-solid fa-bars" ></i>
+          </label>
+        </div>
+        
+        <div class="sidebar_menu">
+          <div class="logo_and_cut">
+          <div class="logo">
+            <a href="/cars">Car Bazar</a>
+          </div>
+  
+          <div class="btn_two">
+            <label for="check" >
+              <i class="fa-solid fa-xmark" ></i>
+            </label>
+          </div>
+        </div>
+  
+          <div class="menu" >
+            <ul style="list-style-type: none">
+              <li>
+                <i class="fa-solid fa-image"></i>
+                <a href="/cars" style="text-decoration: none;">Home</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <a href="/cars/new" style="text-decoration: none;">Add New Item</a>
+              </li>
+          
+                
+                <% if(!currUser) { %>
+                  <li>
+                <a class="nav-link " aria-current="page" href="/signup"><i class="fa-solid fa-user-plus"></i> Sign up</a>
+                </li>
+                <li>
+                <a class="nav-link" href="/login"> <i class="fa-solid fa-right-to-bracket"></i> Log in</a>
+              </li>
+                <% } %>
+              
+             
+                <% if(currUser) { %>
+        
+                  <li>
+                  <div style="color: rgb(59, 59, 156); text-align: start; margin-left: 20px;"><i class="fa-solid fa-user fa-2x" ></i></i></div>
+                  <div style="font-weight: bolder; color: rgb(9, 115, 141); font-size: x-large; font-weight: 500; text-align: start;"><i><%= currUser.username %></i></div>
+                </li>
+                <li>
+                <a class="nav-link nav-logout" style="font-size: x-large; font-weight: 500; color: red; text-align: start;" href="/logout">
+                  <i class="fa-solid fa-right-from-bracket fa-sm" style="color: red;"></i>Log out</a>
+                </li>
+              
+                  <% } %>
+              <br/>
+             <li>
+          <div class="social_media">
+            &nbsp; <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F"><i class="fa-brands fa-facebook"></i></i></a>
+             &nbsp; <a href="https://x.com/?lang=en"><i class="fa-brands fa-twitter"></i></a>
+             &nbsp; <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></i></a>
+              &nbsp;<a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </li>
+        </div>
+      </div>
+  </div>
+
+
+    </div>
+  </nav>
+
+  <!-- collapse navbar-collapse -->
+  <!-- data-bs-toggle="collapse" -->

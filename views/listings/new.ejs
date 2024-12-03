@@ -1,0 +1,66 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3 style="color: white; text-align: center;">Create A New Car Details</h3>
+    <br/><br/>
+
+    <div class="row">
+        <div class="col-8">
+    <form method="post" action="/cars" enctype="multipart/form-data" class="was-validated" >
+        <div>
+            <label for="title" style="color: white;">Title</label>
+        <input type="text" name="addcar[title]" class="form-control  input-shadow" required>
+        <div class="invalid-feedback">
+          Please enter a Title of Car.
+        </div>
+    </div>
+    <br/>
+    <div>
+        <label for="description" style="color: white;">Description</label>
+        <textarea name="addcar[description]" class="form-control  input-shadow" required></textarea>
+        <div class="invalid-feedback">
+          Please Enter Description os Your Car.
+        </div>
+    </div>
+        <br/>
+        <div>
+            <label for="image" style="color: white;">Image</label>
+        <input type="file" name="addcar[images]"  class="form-control  input-shadow" multiple required>
+        <div class="invalid-feedback">
+          Please Select Your Car's Images(Max 5)
+        </div>
+    </div>
+        <br/>
+        <div>
+            <label for="price" style="color: white;">Price</label>
+        <input type="number" name="addcar[price]" class="form-control  input-shadow" required>
+        <div class="invalid-feedback">
+          Please enter Your Car's Price.
+        </div>
+    </div>
+        <br/>
+        <div>
+            <label for="company" style="color: white;">Company</label>
+        <input type="text" name="addcar[company]" class="form-control input-shadow" required>
+        <div class="invalid-feedback">
+          Please enter Your Car's Company Name.
+        </div>
+    </div>
+        <br/>
+        <div>
+            <label for="country" style="color: white;">Country</label>
+        <input type="text" name="addcar[country]" class="form-control input-shadow" required>
+        <div class="invalid-feedback">
+          Please Enter Your Country.
+        </div>
+    </div>
+        <br/><br/>
+        <div class="btn-add">
+        <button>Submit</button>
+    </div>
+    </form>
+</div>
+</div>
+    <br/><br/><br/>
+</body>
+
+

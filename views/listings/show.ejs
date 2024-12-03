@@ -1,0 +1,149 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3 style="color: white; text-align: center;">Details About the Car</h3><br/><br/>
+    <div class="show-main ">
+        <div class="show-title"><%=car.title%></div>
+            <div id="carouselExample" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active " >
+                  <% if(car.image && car.image.length > 0) { %>
+                  <img src="<%= car.image[0].url %>" class="d-block w-50 img-fluid mx-auto" style="height: 300px;" alt="img">
+                  <% } else { %>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufoxAoeRrwwbf5sxYEOWtr5xJTBXx8gf-QA&s"
+                    alt="img">
+                <% } %>
+                </div>
+                <div class="carousel-item">
+                  <% if(car.image && car.image.length > 0 && car.image.length > 1) { %>
+                    <img src="<%= car.image[1].url %>" class="d-block w-50 img-fluid mx-auto" style="height: 300px;" alt="img">
+                    <% } else { %>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufoxAoeRrwwbf5sxYEOWtr5xJTBXx8gf-QA&s"
+                      alt="img">
+                  <% } %>
+                </div>
+                <div class="carousel-item">
+                  <% if(car.image && car.image.length > 0 && car.image.length > 2) { %>
+                    <img src="<%= car.image[2].url %>" class="d-block w-50 img-fluid mx-auto" style="height: 300px;" alt="img">
+                    <% } else { %>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufoxAoeRrwwbf5sxYEOWtr5xJTBXx8gf-QA&s"
+                      alt="img">
+                  <% } %>
+                </div>
+                <div class="carousel-item">
+                  <% if(car.image && car.image.length > 0 && car.image.length > 3) { %>
+                    <img src="<%= car.image[3].url %>" class="d-block w-50 img-fluid mx-auto" style="height: 300px;" alt="img">
+                    <% } else { %>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufoxAoeRrwwbf5sxYEOWtr5xJTBXx8gf-QA&s"
+                      alt="img">
+                  <% } %>
+                </div>
+                <div class="carousel-item">
+                  <% if(car.image && car.image.length > 0 && car.image.length > 4) { %>
+                    <img src="<%= car.image[4].url %>" class="d-block w-50 img-fluid mx-auto" style="height: 300px;" alt="img">
+                    <% } else { %>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufoxAoeRrwwbf5sxYEOWtr5xJTBXx8gf-QA&s"
+                   alt="img">
+                  <% } %>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        
+        <div class="show-description"><%=car.description%></div>
+        
+        <div class="others">
+        <div class="show-price">&#8377;<%=car.price.toLocaleString("en-IN")%></div>
+        <div class="show-company"><%=car.company%></div>
+        <div class="show-country"><%=car.country%></div>
+        <p style="color: rgb(232, 248, 11);">Owner : <%= car.owner.username %></p>
+    </div>
+    </div>
+    <% if(currUser.id ===  car.owner.id ) {  %> 
+        <br/><br/>
+    <div class="show-edt-dlt" >
+      <div>
+    <form method="get" action="/cars/<%=car._id%>/edit">
+        <button class="show-edt">Edit</button>
+    </form>
+  </div>
+    <div>
+    <form method="get" action="/cars/<%=car._id%>/delete">
+        <button class="show-dlt">Delete</button>
+    </form>
+  </div>
+</div>
+<%  } %>
+<% if(currUser.id !=  car.owner.id) { %>
+  <p style="color: rgb(232, 248, 11); text-align: center;">His contact : : <%= car.owner.email %>
+    (<span style="color: rgb(11, 201, 58);"> Immediate contact for buy!!</span>)</p>
+<br/><br/>
+<div style="text-align: center;">
+    <button style="background-color: rgb(6, 121, 6); color: white; border-radius: 10px;
+    border: none; height: 2rem; width: 5rem; opacity: .8;" onmouseover="this.style.opacity='1';"
+    onmouseout="this.style.opacity='.8';">
+        Buy Now</button>
+</div>
+<% } %>
+<br/>
+        <div class="row">
+            <div class="col-4">
+                <hr style="color: aqua;"/>
+                <h3 style="color: White; text-align: center;">Comment Section</h3>
+                <br/>
+        <form action="/cars/<%= car._id %>/reviews" method="post">
+<fieldset class="starability-coinFlip">
+    <legend>First rating:</legend>
+    <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+    <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+    <label for="first-rate1" title="Terrible">1 star</label>
+    <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+    <label for="first-rate2" title="Not good">2 stars</label>
+    <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+    <label for="first-rate3" title="Average">3 stars</label>
+    <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+    <label for="first-rate4" title="Very good">4 stars</label>
+    <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+    <label for="first-rate5" title="Amazing">5 stars</label>
+  </fieldset>
+            <br/><br/>
+            <label for="comment" style="color: white;">Tell us abot your experience:</label>
+            <input type="text" id="comment" class="form-control p-2" name="review[comment]" placeholder="Write a few words about this car...">
+            <br/><br/>
+            <button class="btn btn-success p-1">Submit</button>
+        </div></div>
+        </form>
+        <br/>
+          <div class="row">
+            <div class="col-6 offset-2">
+                <hr style="color: aqua;"/>
+                <br/>
+                <h3 style="color: aqua; text-align: center;">All Comments</h3>
+                <br/>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+                <% for(review of car.reviews) { %> 
+                <div class="card review-card" >
+                    <div class="card-body p-2 " >
+                      <h5 class="card-title">@<%= review.author.username %></h5>
+                      <p class="card-text"><%= review.comment %></p>
+                      <p class="starability-result star-para" data-rating="<%= review.rating %>"></p>
+                      <br/>
+                      <% if (review.author._id.equals( currUser._id)){ %>
+                      <form action="/cars/<%= car._id %>/reviews/<%= review._id %>?_method=DELETE" method="post">
+                        <button class="btn btn-outline-danger p-1" ><i class="fa-solid fa-trash"></i>Delete</button>
+                      </form>
+                   <% }  %>
+                    </div>
+                  </div>
+                  <% } %>
+                </div>
+            </div>
+          </div>
+          <br/>
+</body>

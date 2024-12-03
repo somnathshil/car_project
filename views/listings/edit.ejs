@@ -1,0 +1,45 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3 style="color: white; text-align: center;">Edit Your Page</h3>
+    <br/>
+    <div class="row">
+        <div class="col-8">
+    <form method="post" action="/cars/<%=car._id%>?_method=PUT" enctype="multipart/form-data">
+        <div>
+        <label for="title" style="color: white;">Title</label>
+         <input type="text" name="addcar[title]" class="form-control input-shadow" value="<%=car.title%>">
+        </div>
+         <br/>
+         <div>
+         <label for="description" style="color: white;">Description</label>
+         <textarea name="addcar[description]" class="form-control input-shadow" ><%=car.description%></textarea>
+        </div>
+         <br/>
+         <div>
+         <label for="image" style="color: white;">Upload New Images</label>
+         <input type="file" name="addcar[images]" class="form-control input-shadow" placeholder="Upload Car's Image" multiple required>
+        </div>
+         <br/>
+         <div>
+         <label for="price" style="color: white;">Price</label>
+         <input type="number" name="addcar[price]" class="form-control input-shadow" value="<%=car.price%>">
+        </div>
+         <br/>
+         <div>
+         <label for="company" style="color: white;">Company</label>
+         <input type="text" name="addcar[company]" class="form-control input-shadow" value="<%=car.company%>">
+        </div>
+         <br/>
+         <div>
+         <label for="country" style="color: white;">Country</label>
+         <input type="text" name="addcar[country]" class="form-control input-shadow" value="<%=car.country%>">
+        </div>
+         <br/><br/>
+         <div class="btn-add">
+         <button >Edit</button>
+        </div>
+    </form>
+</div>
+</div>
+    <br/><br/>
+</body>
