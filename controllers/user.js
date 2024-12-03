@@ -30,7 +30,7 @@ module.exports.signUpRoute =  (req, res)=>{
   module.exports.logInPostRoute =  (req, res) => {
     req.flash("success", "Welcome! You are Successfully Logged In");
     const redirectUrl = res.locals.redirectUrl || "/cars";
-    res.redirect(redirectUrl); // Redirect to the specified URL or default
+    res.redirect(redirectUrl); 
   };
 
   module.exports.logOutRoute =  (req, res)=>{
